@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mélissa Duthoit CV</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	
+	<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.easing.min.js"></script> 
+    <script type="text/javascript" src="../js/jquery.mixitup.min.js"></script>
+	<script type="text/javascript">
+    $(function () {
+        
+        var filterList = {
+        
+            init: function () {
+            
+                // Plugin Mixitup, qui permet de filtrer les vignettes par catégorie
+                $('#portfoliolist').mixitup({
+                    targetSelector: '.portfolio',
+                    filterSelector: '.filter',
+                    effects: ['fade'],
+                    easing: 'snap',
+                    // call the hover effect
+                    onMixEnd: filterList.hoverEffect()
+                });             
+            
+            },
+            
+            hoverEffect: function () {
+            
+                // Fonction pour l'effet "hover"
+                $('#portfoliolist .portfolio').hover(
+                    function () {
+                        $(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+                        $(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');             
+                    },
+                    function () {
+                        $(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+                        $(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');                               
+                    }       
+                );              
+            
+            }
+        };
+        
+        // Lance les deux fonctions "hover" et "filtre"
+        filterList.init();
+        
+        
+    }); 
+    </script>
+
+    </head>
+    <body>
+	<div class="container-fluid">
+        <header>
+		<div class="row">
+			<div class="col-md-4">
+						<img src="http://melissaduthoit.com/images/profil2.png" />
+			</div>
+			<div class="col-md-8">
+					<div id="titre">
+						<h1>Mélissa Duthoit</h1>
+						<h2>Développeuse Front-End</h2>
+					</div>	
+			</div>
+		</div>
+        </header>
+        <main>
+		<div class="row">
+			<div class="col-md-4">
+					<div id="formation">
+						<h3>Formations</h3>
+							<ul>
+								<li>Septembre 2015<br />Formation Développeur Web et Mobile<br />Simplon.co (formation en ligne)</li>
+								<li>2011-2012<br />Licence 1 Italien<br />Université de Lille 3, Villeneuve d'Ascq (59)</li>
+								<li>2008-2011<br />Bachelor en Publicité<br />Institut Saint-Luc, Tournai (Belgique)</li>
+								<li>2007-2008 <br />Licence 1 Histoire de l'Art et archéologie<br />Université de Lille 3, Villeneuve d'Ascq (59)</li>
+								<li>2007 <br />Bac STI Arts Appliqués <br /> Institut Saint-Vincent de Paul, Loos (59)</li>
+							</ul>
+					</div>
+			</div>
+			<div class="col-md-4">
+					<div id="ambition">
+						 <h3>Ambitions</h3>
+							<ul>
+								<p>Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique, découvrit la source incontestable du Lorem Ipsum. <br /><br />Il provient en fait des sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un traité sur la théorie de l'éthique. Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section 1.10.32.</p>
+							</ul> 
+					</div>
+			</div>
+			<div class="col-md-4">					
+					<div id="experience">
+						 <h3>Expériences</h3>
+							<ul>
+								<li>Août 2015 à maintenant<br />La Pioche, épicerie solidaire, Haubourdin (59)<br />Refonte du site internet : identité visuelle + intégration sur Wordpress (en cours)</li>
+								<li>2012-2013<br />Glory-box.com, blog culturel & forum<br />Graphiste et Webmaster : Identité visuelle, gestion de la communauté</li>
+								<li>Avril 2011<br />Agence de Communication Demain l'Agence, Wambrechies (59)<br />Stage de graphisme : Recherches graphiques logos, assistante photo</li>
+								<li>Juin 2005<br />Agence de Publicité Normédia, Lille<br />Stage en graphisme : Apprentissage de Photoshop & Illustrator, logos, cartes de visites</li>
+							</ul> 
+					</div>		
+				</div>
+			</div>	
+		</div>
+		
+		  <div class="container">
+
+            <h2>Mon portfolio</h2>
+            <!--data-filter permet de filtrer les vignettes par catégorie-->
+            <ul id="filters" class="clearfix row">
+                <li><span class="filter active" data-filter="cat1 cat2 cat3 cat4">Toutes mes catégories</span></li>
+                <li><span class="filter" data-filter="cat1">HTML/CSS</span></li>
+                <li><span class="filter" data-filter="cat2">Javascript</span></li>
+                <li><span class="filter" data-filter="cat3">Bootstrap</span></li>
+                <li><span class="filter" data-filter="cat4">Ruby</span></li>
+            </ul>
+
+            <div id="portfoliolist"> <!--La div qui contient les vignettes des projets-->
+                
+                <div class="portfolio cat2" data-cat="cat2">
+                    <div class="portfolio-wrapper">             
+                        <img src="http://placehold.it/300x200" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Annuaire</a>
+                                <span class="text-category">Javascript</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>              
+
+                <div class="portfolio cat1" data-cat="cat1">
+                    <div class="portfolio-wrapper">         
+                        <img src="http://placehold.it/300x200" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Titre de mon projet HTML/CSS</a>
+                                <span class="text-category">HTML/CSS</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>      
+                            
+                
+                <div class="portfolio cat4" data-cat="cat4">
+                    <div class="portfolio-wrapper">         
+                        <img src="http://placehold.it/300x200" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">API Open Food Facts</a>
+                                <span class="text-category">Ruby</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>  
+                            
+                <div class="portfolio cat1" data-cat="cat1">
+                    <div class="portfolio-wrapper">
+                        <img src="http://placehold.it/300x200" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Page de profil</a>
+                                <span class="text-category">HTML/CSS</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>          
+                
+
+                <div class="portfolio cat2" data-cat="cat2">
+                    <div class="portfolio-wrapper">         
+                        <img src="http://placehold.it/300x200" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Titre de mon projet en Javascript</a>
+                                <span class="text-category">Javascript</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>                                                                                                                                                          
+                
+                <div class="portfolio cat1" data-cat="cat1">
+                    <div class="portfolio-wrapper">         
+                        <img src="http://placehold.it/300x200" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Page placement div</a>
+                                <span class="text-category">HTML/CSS</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>                                                      
+                
+                <div class="portfolio cat4" data-cat="cat4">
+                    <div class="portfolio-wrapper">         
+                        <img src="http://placehold.it/300x200" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Exercice en Ruby</a>
+                                <span class="text-category">Ruby</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>                              
+                                                                                         
+
+                <div class="portfolio cat3" data-cat="cat3">
+                    <div class="portfolio-wrapper">         
+                        <img src="http://placehold.it/300x200" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Exercice utilisation Bootstrap</a>
+                                <span class="text-category">Bootstrap</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="portfolio cat4" data-cat="cat4">
+                    <div class="portfolio-wrapper">         
+                        <img src="http://placehold.it/300x200" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Titre de mon projet avec Ruby</a>
+                                <span class="text-category">Ruby</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>                                                                                                                                                    
+                
+                <div class="portfolio cat2" data-cat="cat2">
+                    <div class="portfolio-wrapper">         
+                        <img src="http://placehold.it/300x200" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Tic-Tac-Toe</a>
+                                <span class="text-category">Javascript</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>                                                                  
+
+                <div class="portfolio cat2" data-cat="cat2">
+                    <div class="portfolio-wrapper">         
+                        <img src="http://placehold.it/300x200" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Pierre-Feuille-Ciseau</a>
+                                <span class="text-category">Javascript</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>      
+
+                <div class="portfolio cat3" data-cat="cat3">
+                    <div class="portfolio-wrapper">         
+                        <img src="http://placehold.it/300x200" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Titre de mon projet Bootstrap</a>
+                                <span class="text-category">Bootstrap</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>    
+                                                                                                     
+            </div>
+        
+        </div><!-- container -->
+
+		
+        </main>
+		
+		
+        <footer>
+			<div class="map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2530.8100082058595!2d3.060553792710229!3d50.63064616254432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1447014893080" width="50%" frameborder="0" style="border:0" allowfullscreen></iframe>
+				<p class="textfoot">59000 Lille - melissa.duthoit@hotmail.fr - www.melissaduthoit.com</p>
+			</div>
+			<form class="form-style" method="post" action="traitement.php">
+				<ul>
+					<li>
+						<input type="text" name="lastname" id="lastname" placeholder="Nom" required />
+						<input type="text" name="name" id="name" placeholder="Prénom" required />
+					</li>
+					<li><input type="email" name="mail" id="mail" placeholder="Email" required /></li>
+					<li><textarea name="message" id="message" placeholder="Message" required></textarea></li>
+					<li><input type="submit" value="Envoyer" /></li>
+				</ul>
+			</form>
+			
+        </footer>
+		</div>
+    </body>
+</html>

@@ -1,0 +1,299 @@
+html, body { 
+	margin:0; 
+	padding:0;
+	background-color: #F2F2F2;
+	background-image: url("../images/ticks.png");
+}
+
+.container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/****EN-TETE****/
+
+header {
+    background-color: #11667F;
+    background-image: url("../images/binding_dark.png");
+}
+
+header img {
+	width: 250px;
+	display: inline-block;
+	margin-left: 70px;
+	padding: 30px 0 30px 0;
+}
+
+#titre {
+	display: inline-block;
+	color: #f2f2f2;
+	margin-top: 0px;
+}
+
+h1 {
+    font-size: 45px;
+	margin-top: 30px;
+}
+
+
+header h2 {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+	margin: 0;
+}
+
+/****CORPS****/
+
+main {
+	width: 90%;
+	margin: 0 auto;
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+
+.col-md-4 ul {
+    margin-left: 0;
+    padding-left: 0;
+} 
+
+.col-md-4 ul li, .col-md-4 ul p {
+    color: #11667f;
+	font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+.col-md-4 ul li {
+    list-style-type: none; 
+}
+
+
+.col-md-4 h3 {
+    color: black;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+	margin-bottom: 20px;
+}
+
+/******* Footer *******/
+
+.map {
+	background-image: url('../images/stardust.png');
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+p.textfoot{
+	color: #F2F2F2;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 30px;
+}
+
+iframe {
+	margin-left: 70px;
+}
+
+/*** Formulaire ***/
+
+.form-style {
+	width: 50%;
+	margin-top: 5px;
+	margin-left: 25px;
+	padding: 30px 0 20px 0;
+}  
+
+.form-style ul {
+	list-style-type: none;
+}
+
+.form-style ul li {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.form-style ul li #lastname, #name {
+	width: 24.8%;
+	min-height: 35px;
+	border-style: none;
+}
+
+.form-style ul li #mail {
+	width: 50%;
+	min-height: 35px;
+	border-style: none;
+}
+
+.form-style ul li #message {
+	width: 50%;
+	min-height: 130px;
+	border-style: none;
+}
+
+.form-style input[type="submit"] {
+	padding: 5px 10px 5px 10px;
+	color: #FFF;
+	background-color: #11667f;
+	border-style: none;
+}
+
+/********* Portfolio **********/
+
+.container { 
+    position: relative; 
+	padding-bottom: 15px;
+	margin-bottom: 30px;
+	background-color: rgba(255, 255, 255, 0.5);
+    -webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;  
+}
+ 
+#filters {
+    margin:1%;
+    padding:0;
+    list-style:none;
+}
+
+#filters li {
+    float:left;
+    }
+    
+#filters li span {
+    display: block;
+    padding:5px 20px;       
+    text-decoration:none;
+    color:#666;
+	cursor: pointer;
+    }
+    
+#filters li span.active {
+    background: #11667f;
+    color:#fff;
+    }
+ 
+
+ 
+#portfoliolist .portfolio {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    width:23%;
+    margin:1%;
+    display:none;
+    float:left;
+    overflow:hidden;
+}
+
+.portfolio-wrapper {
+    overflow:hidden;
+    position: relative !important;
+    background: #666;
+    cursor:pointer;
+    }
+
+.portfolio img {
+    max-width:100%;
+    position: relative;
+    }
+    
+.portfolio .label {
+    position: absolute;
+    width: 100%;
+    height:40px;
+    bottom:-40px;
+    }
+
+.portfolio .label-bg {
+    background: #11667f;
+    width: 100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;       
+    }
+    
+.portfolio .label-text {
+    color:#fff;
+    position: relative;
+    z-index:500;
+    padding:5px 8px;
+    }
+            
+.portfolio .text-category {
+    display:block;
+    font-size:9px;
+}
+
+a.text-title {
+	color: #fff;
+}    
+
+span.text-category {
+	color: rgba(255, 255, 255, 0.6);
+}
+	
+/* #Tablet (Portrait) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .container {
+        width: 768px; 
+    }
+}
+
+
+/*  #Mobile (Portrait) - Note: Design for a width of 320px */
+@media only screen and (max-width: 767px) {
+    .container { 
+        width: 95%; 
+    }
+    
+    #portfoliolist .portfolio {
+        width:48%;
+        margin:1%;
+    }       
+
+    #ads {
+        display:none;
+    }
+    
+}
+
+
+/* #Mobile (Landscape) - Note: Design for a width of 480px */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .container {
+        width: 70%;
+    }
+    
+    #ads {
+        display:none;
+    }
+    
+}
+
+/* #Clearing */
+
+/* Self Clearing Goodness */
+.container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0; }
+.row:after,
+.clearfix:after {
+  clear: both; }
+.row,
+.clearfix {
+  zoom: 1; }
+
+.clear {
+  clear: both;
+}
